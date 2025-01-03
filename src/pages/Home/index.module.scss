@@ -1,0 +1,17 @@
+.main-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .main-viewer {
+    flex: 1;
+    padding: 10px 0;
+  }
+
+  .main-timeline {
+    height: auto;
+    padding: 10px 0;
+  }
+}

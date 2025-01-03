@@ -1,0 +1,36 @@
+.timeline-wrapper {
+  width: 100%;
+  height: 300px;
+
+  min-height: 32px;
+  position: relative;
+  font-size: 12px;
+  background-color: #191b1d;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .timeline-area {
+    width: 100%;
+    flex: 1;
+    cursor: pointer;
+
+    .timeline-marker {
+      position: absolute;
+      background-color: #4581fd;
+      width: 1px;
+      height: 100%;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        background-color: #4581fd; // bg-red-200
+        border-radius: 2px;
+      }
+    }
+  }
+}

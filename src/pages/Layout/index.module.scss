@@ -1,0 +1,14 @@
+.app-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: beige;
+  padding: 8px;
+
+  .app-main {
+    flex: 1;
+    background-color: skyblue;
+  }
+}
