@@ -7,7 +7,7 @@ import axios from 'axios';
 const TimeLine = () => {
   const domRef = useRef<HTMLDivElement | null>(null);
   const [currentTime, setCurrentTime] = useState<number>(0);
-  const [totalTimeMS, setTotalTimeMS] = useState<number>(10000);
+  const [totalTimeMS, setTotalTimeMS] = useState<number>(17062);
   const [width, setWidth] = useState<number>(Number.MAX_SAFE_INTEGER);
   const [positionX, setPositionX] = useState<number>(0);
   const [period, setPeriod] = useState<number>(10);
@@ -55,6 +55,9 @@ const TimeLine = () => {
     const clickX = e.clientX - rect.left; // 클릭한 위치의 x좌표
 
     const newTimeMS = (clickX / width) * totalTimeMS;
+
+    console.log(`start_time : ${newTimeMS}`);
+    console.log(`period : ${period}`);
     setIsPlay(false);
     setCurrentTime(newTimeMS);
 
@@ -65,13 +68,13 @@ const TimeLine = () => {
 
       console.log('Frame extracted successfully:', response.data);
     } catch (e) {
-      console.error('Error extracting frame:');
+      console.error('Error extracting frame:' + e);
     }
   };
 
   return (
     <div ref={domRef} className={styles['timeline-wrapper']}>
-      <TimeControl setIsPlay={setIsPlay} currentTimeMS={currentTime} isPlay={isPlay} />
+      <TimeControl setIsPlay={setIsPlay} period={period} currentTimeMS={currentTime} isPlay={isPlay} />
       <div className={styles['timeline-area']} onClick={handleClick}>
         <div
           className={styles['timeline-marker']}

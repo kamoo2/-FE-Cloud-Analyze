@@ -5,6 +5,17 @@
   flex-direction: column;
   justify-content: space-between;
 
+  .main-log-button {
+    width: 100px;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+  }
   .main-viewer {
     flex: 1;
     padding: 10px 0;
